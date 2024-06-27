@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Automatizada para Minecraft Bedrock Edition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+    }
+    pre {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Database Automatizada para Minecraft Bedrock Edition</h1>
+    <p>Criado por [SOU SEU AMOR655], [27/06/2024]</p>
+  </header>
 
+  <section id="introduction">
+    <h2>Introdução</h2>
+    <p>Esta documentação fornece informações detalhadas sobre como utilizar uma database automatizada para Minecraft Bedrock Edition, permitindo a manipulação de dados de forma contínua e sem intervenção manual direta.</p>
+  </section>
+
+  <section id="funcionalidades">
+    <h2>Funcionalidades</h2>
+    <p>Esta database oferece uma série de funções para manipulação automática de dados:</p>
+    <ul>
+      <li><code>setData(entityOrObject, identifier, value)</code></li>
+      <li><code>getData(entityOrObject, identifier)</code></li>
+      <li><code>removeData(entityOrObject, identifier)</code></li>
+      <li><code>keyExists(entityOrObject, identifier)</code></li>
+      <li><code>countKeys(entityOrObject)</code></li>
+    </ul>
+  </section>
+
+  <section id="como-usar">
+    <h2>Como Usar</h2>
+
+    <article>
+      <h3>Função <code>setData</code></h3>
+      <p>Define um valor no database de forma automática.</p>
+      <pre><code>
+&lt;script type="text/javascript"&gt;
+// Simulando atualizações automáticas de pontuação dos jogadores
+// A database automatizada manipulará os dados sem intervenção manual direta
+
+// Define uma pontuação para um jogador automaticamente
+setData('player1', 'score', 50);
+&lt;/script&gt;
+      </code></pre>
+    </article>
+
+    <article>
+      <h3>Função <code>getData</code></h3>
+      <p>Obtém um valor do database de forma automática.</p>
+      <pre><code>
+&lt;script type="text/javascript"&gt;
+// Obtém e exibe a pontuação atual de um jogador de forma automática
+let score = getData('player1', 'score');
+console.log(`Pontuação do jogador: ${score}`);
+&lt;/script&gt;
+      </code></pre>
+    </article>
+
+    <article>
+      <h3>Função <code>removeData</code></h3>
+      <p>Remove um valor do database de forma automática.</p>
+      <pre><code>
+&lt;script type="text/javascript"&gt;
+// Simula uma remoção automática de dados após um evento específico
+if (score >= 100) {
+    removeData('player1', 'score');
+    console.log(`Pontuação do jogador removida automaticamente após atingir 100 pontos.`);
+}
+&lt;/script&gt;
+      </code></pre>
+    </article>
+
+    <article>
+      <h3>Função <code>keyExists</code></h3>
+      <p>Verifica se uma chave existe no database de forma automática.</p>
+      <pre><code>
+&lt;script type="text/javascript"&gt;
+// Verifica se a pontuação ainda existe de forma automática
+let scoreExists = keyExists('player1', 'score');
+console.log(`Pontuação ainda existe: ${scoreExists}`);
+&lt;/script&gt;
+      </code></pre>
+    </article>
+
+    <article>
+      <h3>Função <code>countKeys</code></h3>
+      <p>Conta o número de chaves no database de forma automática.</p>
+      <pre><code>
+&lt;script type="text/javascript"&gt;
+// Conta automaticamente o número de chaves para um jogador
+let keyCount = countKeys('player1');
+console.log(`Número de chaves para jogador1: ${keyCount}`);
+&lt;/script&gt;
+      </code></pre>
+    </article>
+  </section>
+
+  <footer>
+    <h2>Lista de Scripts que Podem Usar a Database</h2>
+    <ol>
+      <li>Scripts de Pontuação Automática</li>
+      <li>Scripts de Inventário Automatizado</li>
+      <li>Scripts de Estatísticas de Jogo Automáticas</li>
+      <li>Scripts de Configurações de Jogador Automatizadas</li>
+      <li>Scripts de Log de Eventos Automatizados</li>
+    </ol>
+
+    <h2>Licenciamento e Termos de Uso</h2>
+    <p>Este trabalho está licenciado sob a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0</a>.</p>
+    <p>Para visualizar uma cópia desta licença, visite o <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">site da Creative Commons</a>.</p>
+  </footer>
+</body>
+  </html>
