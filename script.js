@@ -1,16 +1,15 @@
-// JavaScript para manipulação de eventos, como o envio do formulário
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    // Obter os valores do formulário
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
 
-    // Simulação de login (substitua com sua lógica real de login)
-    if (username === 'admin' && password === 'senha123') {
-        alert('Login bem sucedido! Redirecionando...');
-        window.location.href = 'dashboard.html'; // Página para redirecionar após login
-    } else {
-        alert('Usuário ou senha incorretos. Tente novamente.');
-    }
+    // Aqui você pode adicionar a lógica para enviar o formulário, como usar um serviço de e-mail ou API
+    alert('Mensagem enviada com sucesso!');
+
+    // Limpar campos após enviar
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
 });
