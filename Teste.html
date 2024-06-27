@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação da Database Automatizada para Minecraft Bedrock Edition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .string {
+      color: #228B22;
+    }
+    .command {
+      color: #007bff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Documentação da Database Automatizada para Minecraft Bedrock Edition</h1>
+
+  <h2>Introdução</h2>
+  <p>Esta documentação fornece informações detalhadas sobre como utilizar uma database automatizada para Minecraft Bedrock Edition, permitindo a manipulação de dados de forma contínua e sem intervenção manual direta.</p>
+
+  <h2>Funcionalidades</h2>
+  <ul>
+    <li><code class="command">setData</code>(<span class="string">entityOrObject</span>, <span class="string">identifier</span>, <span class="string">value</span>): Define um valor no database.</li>
+    <li><code class="command">getData</code>(<span class="string">entityOrObject</span>, <span class="string">identifier</span>): Obtém um valor do database.</li>
+    <li><code class="command">removeData</code>(<span class="string">entityOrObject</span>, <span class="string">identifier</span>): Remove um valor do database.</li>
+    <li><code class="command">keyExists</code>(<span class="string">entityOrObject</span>, <span class="string">identifier</span>): Verifica se uma chave existe no database.</li>
+    <li><code class="command">countKeys</code>(<span class="string">entityOrObject</span>): Conta o número de chaves no database.</li>
+  </ul>
+
+  <h2>Como Usar</h2>
+
+  <h3>Função <code class="command">setData</code></h3>
+  <p>Define um valor no database de forma automática.</p>
+  <p><strong>Parâmetros:</strong></p>
+  <ul>
+    <li><span class="string">entityOrObject</span> (string): A entidade ou objeto ao qual o dado pertence.</li>
+    <li><span class="string">identifier</span> (string): O identificador único para o dado.</li>
+    <li><span class="string">value</span> (number | object): O valor a ser armazenado, que pode ser um número ou um objeto.</li>
+  </ul>
+
+  <h3>Função <code class="command">getData</code></h3>
+  <p>Obtém um valor do database de forma automática.</p>
+  <p><strong>Parâmetros:</strong></p>
+  <ul>
+    <li><span class="string">entityOrObject</span> (string): A entidade ou objeto ao qual o dado pertence.</li>
+    <li><span class="string">identifier</span> (string): O identificador único para o dado.</li>
+  </ul>
+  <p><strong>Retorno:</strong> O valor associado ao identificador, se encontrado.</p>
+
+  <h3>Função <code class="command">removeData</code></h3>
+  <p>Remove um valor do database de forma automática.</p>
+  <p><strong>Parâmetros:</strong></p>
+  <ul>
+    <li><span class="string">entityOrObject</span> (string): A entidade ou objeto ao qual o dado pertence.</li>
+    <li><span class="string">identifier</span> (string): O identificador único para o dado.</li>
+  </ul>
+
+  <h3>Função <code class="command">keyExists</code></h3>
+  <p>Verifica se uma chave existe no database de forma automática.</p>
+  <p><strong>Parâmetros:</strong></p>
+  <ul>
+    <li><span class="string">entityOrObject</span> (string): A entidade ou objeto ao qual o dado pertence.</li>
+    <li><span class="string">identifier</span> (string): O identificador único para o dado.</li>
+  </ul>
+  <p><strong>Retorno:</strong> <code>true</code> se a chave existe, <code>false</code> caso contrário.</p>
+
+  <h3>Função <code class="command">countKeys</code></h3>
+  <p>Conta o número de chaves no database de forma automática.</p>
+  <p><strong>Parâmetros:</strong></p>
+  <ul>
+    <li><span class="string">entityOrObject</span> (string): A entidade ou objeto ao qual os dados pertencem.</li>
+  </ul>
+  <p><strong>Retorno:</strong> O número de chaves existentes.</p>
+
+  <h2>Exemplo Automatizado</h2>
+
+  <p>Aqui está um exemplo prático de como a database automatizada pode ser usada em um script de Minecraft Bedrock Edition para gerenciar pontuações dos jogadores de forma contínua:</p>
+
+  <pre><code>
+// Simulando atualizações automáticas de pontuação dos jogadores
+// A database automatizada manipulará os dados sem intervenção manual direta
+
+// Define uma pontuação para um jogador automaticamente
+<span class="command">setData</span>('player1', 'score', 50);
+
+// Obtém e exibe a pontuação atual de um jogador de forma automática
+let score = <span class="command">getData</span>('player1', 'score');
+console.log(`Pontuação do jogador: ${score}`);
+
+// Simula uma remoção automática de dados após um evento específico
+if (score >= 100) {
+    <span class="command">removeData</span>('player1', 'score');
+    console.log(`Pontuação do jogador removida automaticamente após atingir 100 pontos.`);
+}
+
+// Verifica se a pontuação ainda existe de forma automática
+let scoreExists = <span class="command">keyExists</span>('player1', 'score');
+console.log(`Pontuação ainda existe: ${scoreExists}`);
+
+// Conta automaticamente o número de chaves para um jogador
+let keyCount = <span class="command">countKeys</span>('player1');
+console.log(`Número de chaves para jogador1: ${keyCount}`);
+  </code></pre>
+
+  <h2>Lista de Scripts que Podem Usar a Database</h2>
+  <ul>
+    <li>Scripts de Pontuação Automática</li>
+    <li>Scripts de Inventário Automatizado</li>
+    <li>Scripts de Estatísticas de Jogo Automáticas</li>
+    <li>Scripts de Configurações de Jogador Automatizadas</li>
+    <li>Scripts de Log de Eventos Automatizados</li>
+  </ul>
+
+  <h2>Licenciamento e Termos de Uso</h2>
+  <p>
+    <p xmlns:cc="http://creativecommons.org/ns#">
+      Este trabalho está licenciado sob 
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+        CC BY-NC 4.0
+        <img style="height:22px!important;margin-left:3px;vertical-align:bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">
+        <img style="height:22px!important;margin-left:3px;vertical-align:bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
+        <img style="height:22px!important;margin-left:3px;vertical-align:bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="">
+      </a>
+    </p>
+    <strong>Permissões:</strong> Você tem permissão para usar, modificar e distribuir este software.
+    <br>
+    <strong>Atribuição:</strong> Você deve dar crédito ao criador original, mencionando o apelido do criador e incluindo um link para a licença.
+    <br>
+<strong>Restrições:</strong> Não Comercial - Este software não pode ser utilizado para fins comerciais. Isso inclui vendas diretas ou lucro comercial.
+  <br><br>
+
+  <strong>Exemplo de Texto de Licença:</strong>
+  <br>
+  <code>
+    DADOS DE SEVEN7© 2SETE7
+    <br><br>
+    Este software está licenciado sob a Licença Creative Commons Attribution-NonCommercial 4.0 Internacional. Para visualizar uma cópia desta licença, visite <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">http://creativecommons.org/licenses/by-nc/4.0/</a> ou envie uma carta para Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+  </code>
+
+  <h2>Notas Adicionais</h2>
+  <p>Certifique-se de entender completamente os termos da licença antes de utilizar este software. Se você tiver alguma dúvida sobre o uso permitido ou restrições, entre em contato com o criador do software.</p>
+
+</body>
+</html>
